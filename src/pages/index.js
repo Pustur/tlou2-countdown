@@ -11,7 +11,17 @@ const IndexPage = () => (
           <p className="Subtitle">Will release in</p>
         </header>
         <Countdown toDate={new Date(2019, 5, 14)}>
-          {difference => <CountdownDisplay {...difference} />}
+          {props => (
+            <CountdownDisplay
+              isComplete={props.isComplete}
+              months={props.months}
+              days={props.days}
+              asDays={props.asDays}
+              hours={props.hours}
+              minutes={props.minutes}
+              seconds={props.seconds}
+            />
+          )}
         </Countdown>
       </main>
     </div>

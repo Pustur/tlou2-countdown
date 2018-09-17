@@ -24,34 +24,24 @@ class Countdown extends Component {
 
   isComplete = () => this.state.now > this.props.toDate;
 
-  getDiffDuration = () => {
-    const now = moment(this.state.now);
-    const toDate = moment(this.props.toDate);
-
-    return moment.duration(toDate.diff(now));
-  };
+  getTimeDifference = diff => ({
+    years: diff.years(),
+    months: diff.months(),
+    days: diff.days(),
+    asDays: Math.floor(diff.asDays()),
+    hours: diff.hours(),
+    minutes: diff.minutes(),
+    seconds: diff.seconds(),
+    milliseconds: diff.milliseconds(),
+  });
 
   render() {
-    const diff = this.getDiffDuration();
-    const years = diff.years();
-    const months = diff.months();
-    const days = diff.days();
-    const hours = diff.hours();
-    const minutes = diff.minutes();
-    const seconds = diff.seconds();
-    const milliseconds = diff.milliseconds();
-    const asDays = Math.floor(diff.asDays());
-    const datetime = `P${asDays}DT${hours}H${minutes}M${seconds}.${milliseconds}S`;
+    const now = moment(this.state.now);
+    const toDate = moment(this.props.toDate);
+    const diff = moment.duration(toDate.diff(now));
 
     return this.props.children({
-      years,
-      months,
-      days,
-      hours,
-      minutes,
-      seconds,
-      milliseconds,
-      datetime,
+      ...this.getTimeDifference(diff),
       isComplete: this.isComplete(),
     });
   }
