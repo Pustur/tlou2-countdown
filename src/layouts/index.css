@@ -15,6 +15,9 @@ body {
   font-weight: 300;
   line-height: 1;
   background-color: #282828;
+  background-image: url(../img/bg.jpg);
+  background-size: cover;
+  background-position: 35% 0%;
   color: white;
   min-height: 100%;
 }
