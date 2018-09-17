@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const CountdownDisplayUnit = ({ name, value }) => {
-  return (
+const CountdownDisplayUnit = ({ name, value, hideable }) => {
+  return hideable && value === 0 ? null : (
     <span className="CountdownDisplay__item">
       <span className="CountdownDisplay__number">
         {`${value}`.padStart(2, '0')}
@@ -18,6 +18,7 @@ const CountdownDisplayUnit = ({ name, value }) => {
 CountdownDisplayUnit.propTypes = {
   name: PropTypes.string.isRequired,
   value: PropTypes.number.isRequired,
+  hideable: PropTypes.bool.isRequired,
 };
 
 export default CountdownDisplayUnit;
