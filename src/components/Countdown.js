@@ -9,14 +9,20 @@ class Countdown extends Component {
   }
 
   componentDidMount() {
-    this.intervalId = setInterval(() => {
-      this.setState({ now: new Date() });
-    }, this.props.intervalDelay);
+    if (!this.isComplete()) {
+      this.intervalId = setInterval(() => {
+        this.setState({ now: new Date() });
+      }, this.props.intervalDelay);
+    }
   }
 
   componentWillUnmount() {
-    clearInterval(this.intervalId);
+    if (this.intervalId) {
+      clearInterval(this.intervalId);
+    }
   }
+
+  isComplete = () => this.state.now > this.props.toDate;
 
   getDiffDuration = () => {
     const now = moment(this.state.now);
