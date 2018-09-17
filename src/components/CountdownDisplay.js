@@ -5,7 +5,7 @@ import CountdownDisplayUnit from './CountdownDisplayUnit';
 import './CountdownDisplay.css';
 
 const CountdownDisplay = props => {
-  const { datetime, months, days, hours, minutes, seconds } = props;
+  const { datetime, months, days, hours, minutes, seconds, isComplete } = props;
   const units = [
     { name: 'months', value: months, hideable: true },
     { name: 'days', value: days, hideable: months === 0 },
@@ -14,7 +14,9 @@ const CountdownDisplay = props => {
     { name: 'seconds', value: seconds, hideable: false },
   ];
 
-  return (
+  return isComplete ? (
+    <div className="Title">Out now!</div>
+  ) : (
     <time className="CountdownDisplay" dateTime={datetime}>
       {units.map(({ name, value, hideable }) => (
         <CountdownDisplayUnit
@@ -36,7 +38,7 @@ CountdownDisplay.propTypes = {
   hours: PropTypes.number.isRequired,
   minutes: PropTypes.number.isRequired,
   seconds: PropTypes.number.isRequired,
-  milliseconds: PropTypes.number.isRequired,
+  isComplete: PropTypes.bool.isRequired,
 };
 
 export default CountdownDisplay;

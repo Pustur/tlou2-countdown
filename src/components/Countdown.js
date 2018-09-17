@@ -52,6 +52,7 @@ class Countdown extends Component {
       seconds,
       milliseconds,
       datetime,
+      isComplete: this.isComplete(),
     });
   }
 }
