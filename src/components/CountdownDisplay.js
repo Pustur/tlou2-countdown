@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import CountdownDisplayUnit from './CountdownDisplayUnit';
 
+import './CountdownDisplay.css';
+
 const CountdownDisplay = props => {
   const { datetime, months, days, hours, minutes, seconds } = props;
   const units = [
@@ -13,7 +15,7 @@ const CountdownDisplay = props => {
   ];
 
   return (
-    <time dateTime={datetime}>
+    <time className="CountdownDisplay" dateTime={datetime}>
       {units.map(({ name, value }) => (
         <CountdownDisplayUnit key={name} name={name} value={value} />
       ))}
