@@ -7,11 +7,11 @@ import './CountdownDisplay.css';
 const CountdownDisplay = props => {
   const { months, days, asDays, hours, minutes, seconds, isComplete } = props;
   const units = [
-    { name: 'months', value: months, hideable: true },
-    { name: 'days', value: days, hideable: months === 0 },
-    { name: 'hours', value: hours, hideable: false },
-    { name: 'minutes', value: minutes, hideable: false },
-    { name: 'seconds', value: seconds, hideable: false },
+    { name: 'months', value: months, hidden: months === 0 },
+    { name: 'days', value: days, hidden: months === 0 && days === 0 },
+    { name: 'hours', value: hours },
+    { name: 'minutes', value: minutes },
+    { name: 'seconds', value: seconds },
   ];
 
   return isComplete ? (
@@ -21,12 +21,12 @@ const CountdownDisplay = props => {
       className="CountdownDisplay"
       dateTime={`P${asDays}DT${hours}H${minutes}M${seconds}S`}
     >
-      {units.map(({ name, value, hideable }) => (
+      {units.map(({ name, value, hidden }) => (
         <CountdownDisplayUnit
           key={name}
           name={name}
           value={value}
-          hideable={hideable}
+          hidden={hidden}
         />
       ))}
     </time>
