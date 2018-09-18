@@ -1,0 +1,99 @@
+/* GENERAL */
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 300;
+  line-height: 1;
+  background-color: #282828;
+  background-image: url(../img/bg.jpg);
+  background-size: cover;
+  background-position: 35% 0%;
+  color: white;
+  min-height: 100%;
+}
+
+svg {
+  display: block;
+}
+
+/* UTILS */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* COMPONENTS */
+.Title {
+  margin: 0;
+  font-weight: inherit;
+  font-size: 1.875rem;
+}
+
+.Subtitle {
+  font-size: 1.25rem;
+}
+
+.Github {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 20px;
+  transition: opacity 0.3s ease;
+  opacity: 0.6;
+}
+
+.Github:hover,
+.Github:focus {
+  opacity: 1;
+}
+
+.Github__path {
+  fill: white;
+}
+
+@media (max-width: 599px) {
+  .Main {
+    padding: 25px;
+  }
+}
+
+@media (min-width: 600px) {
+  .Wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .Title {
+    font-size: 3.125rem;
+  }
+}
+
+@media (min-width: 960px) {
+  .Title {
+    font-size: 4rem;
+  }
+
+  .Github {
+    padding: 30px;
+  }
+}

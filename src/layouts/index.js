@@ -15,7 +15,9 @@ const Layout = ({ children, data }) => (
           content: data.site.siteMetadata.keywords.join(', '),
         },
       ]}
-    />
+    >
+      <html lang="en-US" />
+    </Helmet>
     {children()}
   </div>
 );
