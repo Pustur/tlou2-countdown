@@ -1,9 +1,10 @@
 import React from 'react';
+import Layout from '../components/Layout';
 import Countdown from '../components/Countdown';
 import CountdownDisplay from '../components/CountdownDisplay';
 
 const IndexPage = () => (
-  <div>
+  <Layout>
     <div className="Wrapper">
       <main className="Main">
         <header>
@@ -41,7 +42,7 @@ const IndexPage = () => (
         </svg>
       </a>
     </footer>
-  </div>
+  </Layout>
 );
 
 export default IndexPage;
