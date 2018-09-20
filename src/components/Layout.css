@@ -50,6 +50,11 @@ svg {
   font-size: 1.25rem;
 }
 
+.Complete {
+  display: inline-block;
+  margin-top: 1rem;
+}
+
 .Github {
   position: fixed;
   bottom: 0;
@@ -66,6 +71,10 @@ svg {
 
 .Github__path {
   fill: white;
+}
+
+.zoom-in {
+  animation: zoom-in 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
 }
 
 @media (max-width: 599px) {
@@ -95,5 +104,16 @@ svg {
 
   .Github {
     padding: 30px;
+  }
+}
+
+@keyframes zoom-in {
+  0% {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  50% {
+    opacity: 1;
   }
 }

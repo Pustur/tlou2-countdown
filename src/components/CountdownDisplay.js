@@ -15,7 +15,7 @@ const CountdownDisplay = props => {
   ];
 
   return isComplete ? (
-    <div className="Title">Out now!</div>
+    <div className="Title Complete zoom-in">Out now!</div>
   ) : (
     <time
       className="CountdownDisplay"
