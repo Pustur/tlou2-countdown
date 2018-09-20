@@ -1,4 +1,5 @@
 import React from 'react';
+import Helmet from 'react-helmet';
 import Layout from '../components/Layout';
 import Countdown from '../components/Countdown';
 import CountdownDisplay from '../components/CountdownDisplay';
@@ -18,20 +19,24 @@ const IndexPage = () => (
               </header>
               {props.isComplete ? (
                 <p className="Title CompleteMessage zoom-in">
+                  <Helmet htmlAttributes={{ class: 'is-complete' }} />
                   Is out now!{' '}
                   <span role="img" aria-label="Party popper">
                     🎉
                   </span>
                 </p>
               ) : (
-                <CountdownDisplay
-                  months={props.months}
-                  days={props.days}
-                  asDays={props.asDays}
-                  hours={props.hours}
-                  minutes={props.minutes}
-                  seconds={props.seconds}
-                />
+                <>
+                  <Helmet htmlAttributes={{ class: 'is-counting' }} />
+                  <CountdownDisplay
+                    months={props.months}
+                    days={props.days}
+                    asDays={props.asDays}
+                    hours={props.hours}
+                    minutes={props.minutes}
+                    seconds={props.seconds}
+                  />
+                </>
               )}
             </>
           )}

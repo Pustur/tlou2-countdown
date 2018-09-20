@@ -16,11 +16,20 @@ body {
   font-weight: 300;
   line-height: 1;
   background-color: #282828;
-  background-image: url(../img/bg.jpg);
   background-size: cover;
-  background-position: 35% 0%;
   color: white;
   min-height: 100%;
+  transition: background-image 2s ease;
+}
+
+.is-counting body {
+  background-image: url(../img/bg.jpg);
+  background-position: 35% 0%;
+}
+
+.is-complete body {
+  background-image: url(../img/bg-complete.jpg);
+  background-position: 25% 45%;
 }
 
 svg {
