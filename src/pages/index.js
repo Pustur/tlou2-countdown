@@ -7,21 +7,33 @@ const IndexPage = () => (
   <Layout>
     <div className="Wrapper">
       <main className="Main">
-        <header>
-          <h1 className="Title">The Last of Us Part&nbsp;II</h1>
-          <p className="Subtitle">Will release in</p>
-        </header>
         <Countdown toDate={new Date(2019, 5, 14)}>
           {props => (
-            <CountdownDisplay
-              isComplete={props.isComplete}
-              months={props.months}
-              days={props.days}
-              asDays={props.asDays}
-              hours={props.hours}
-              minutes={props.minutes}
-              seconds={props.seconds}
-            />
+            <>
+              <header>
+                <h1 className="Title">The Last of Us Part&nbsp;II</h1>
+                {!props.isComplete && (
+                  <p className="Subtitle">Will release in</p>
+                )}
+              </header>
+              {props.isComplete ? (
+                <p className="Title Complete zoom-in">
+                  Is out now!{' '}
+                  <span role="img" aria-label="Party popper">
+                    🎉
+                  </span>
+                </p>
+              ) : (
+                <CountdownDisplay
+                  months={props.months}
+                  days={props.days}
+                  asDays={props.asDays}
+                  hours={props.hours}
+                  minutes={props.minutes}
+                  seconds={props.seconds}
+                />
+              )}
+            </>
           )}
         </Countdown>
       </main>
