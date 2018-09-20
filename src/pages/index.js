@@ -17,7 +17,7 @@ const IndexPage = () => (
                 )}
               </header>
               {props.isComplete ? (
-                <p className="Title Complete zoom-in">
+                <p className="Title CompleteMessage zoom-in">
                   Is out now!{' '}
                   <span role="img" aria-label="Party popper">
                     🎉
