@@ -1,4 +1,5 @@
 import React from 'react';
+import Helmet from 'react-helmet';
 import Layout from '../components/Layout';
 import Countdown from '../components/Countdown';
 import CountdownDisplay from '../components/CountdownDisplay';
@@ -7,28 +8,48 @@ const IndexPage = () => (
   <Layout>
     <div className="Wrapper">
       <main className="Main">
-        <header>
-          <h1 className="Title">The Last of Us Part&nbsp;II</h1>
-          <p className="Subtitle">Will release in</p>
-        </header>
         <Countdown toDate={new Date(2019, 5, 14)}>
           {props => (
-            <CountdownDisplay
-              isComplete={props.isComplete}
-              months={props.months}
-              days={props.days}
-              asDays={props.asDays}
-              hours={props.hours}
-              minutes={props.minutes}
-              seconds={props.seconds}
-            />
+            <>
+              <header>
+                <h1 className="Title">The Last of Us Part&nbsp;II</h1>
+                {!props.isComplete && (
+                  <p className="Subtitle">Will release in</p>
+                )}
+              </header>
+              {props.isComplete ? (
+                <p className="Title CompleteMessage zoom-in">
+                  <Helmet htmlAttributes={{ class: 'is-complete' }} />
+                  Is out now!{' '}
+                  <span role="img" aria-label="Party popper">
+                    🎉
+                  </span>
+                </p>
+              ) : (
+                <>
+                  <Helmet htmlAttributes={{ class: 'is-counting' }} />
+                  <CountdownDisplay
+                    months={props.months}
+                    days={props.days}
+                    asDays={props.asDays}
+                    hours={props.hours}
+                    minutes={props.minutes}
+                    seconds={props.seconds}
+                  />
+                </>
+              )}
+            </>
           )}
         </Countdown>
       </main>
     </div>
     <footer>
-      <a className="Github" href="https://github.com/Pustur" rel="noopener">
-        <span className="sr-only">See on Github</span>
+      <a
+        className="Github"
+        href="https://github.com/Pustur"
+        rel="noopener"
+        title="See on Github"
+      >
         <svg
           height="24"
           viewBox="0 0 24 24"
