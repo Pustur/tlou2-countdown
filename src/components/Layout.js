@@ -34,9 +34,8 @@ const Layout = ({ children }) => (
               content: data.site.siteMetadata.keywords.join(', '),
             },
           ]}
-        >
-          <html lang="en-US" />
-        </Helmet>
+          htmlAttributes={{ lang: 'en-US' }}
+        />
         {children}
       </>
     )}
