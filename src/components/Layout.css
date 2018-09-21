@@ -8,6 +8,7 @@
 html {
   box-sizing: border-box;
   height: 100vh;
+  background-color: #0e191f;
 }
 
 body {
@@ -15,11 +16,10 @@ body {
   font-family: -apple-system, 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   font-weight: 300;
   line-height: 1;
-  background-color: #282828;
   background-size: cover;
   color: white;
   min-height: 100vh;
-  transition: background-image 2s ease;
+  transition: background-image 2s ease, background-position 2s ease;
 }
 
 .is-counting body {
@@ -71,7 +71,7 @@ svg {
 }
 
 .zoom-in {
-  animation: zoom-in 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  animation: zoom-in 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.6s both;
 }
 
 @media (max-width: 599px) {
