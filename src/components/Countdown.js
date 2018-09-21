@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
-import moment from 'moment';
+import { Duration } from 'luxon';
 
 class Countdown extends Component {
   constructor(props) {
@@ -24,24 +24,22 @@ class Countdown extends Component {
 
   isComplete = () => this.state.now > this.props.toDate;
 
-  getTimeDifference = diff => ({
-    years: diff.years(),
-    months: diff.months(),
-    days: diff.days(),
-    asDays: Math.floor(diff.asDays()),
-    hours: diff.hours(),
-    minutes: diff.minutes(),
-    seconds: diff.seconds(),
-    milliseconds: diff.milliseconds(),
-  });
-
   render() {
-    const now = moment(this.state.now);
-    const toDate = moment(this.props.toDate);
-    const diff = moment.duration(toDate.diff(now));
+    const { now } = this.state;
+    const { toDate } = this.props;
+    const duration = Duration.fromObject({
+      years: 0,
+      months: 0,
+      days: 0,
+      hours: 0,
+      minutes: 0,
+      seconds: 0,
+      milliseconds: toDate - now,
+    });
 
     return this.props.children({
-      ...this.getTimeDifference(diff),
+      ...duration.normalize().toObject(),
+      asDays: Math.floor(duration.as('days')),
       isComplete: this.isComplete(),
     });
   }
