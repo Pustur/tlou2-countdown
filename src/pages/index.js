@@ -44,8 +44,12 @@ const IndexPage = () => (
       </main>
     </div>
     <footer>
-      <a className="Github" href="https://github.com/Pustur" rel="noopener">
-        <span className="sr-only">See on Github</span>
+      <a
+        className="Github"
+        href="https://github.com/Pustur"
+        rel="noopener"
+        title="See on Github"
+      >
         <svg
           height="24"
           viewBox="0 0 24 24"
