@@ -1,6 +1,5 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Duration } from 'luxon';
 
 class Countdown extends Component {
   constructor(props) {
@@ -27,19 +26,17 @@ class Countdown extends Component {
   render() {
     const { now } = this.state;
     const { toDate } = this.props;
-    const duration = Duration.fromObject({
-      years: 0,
-      months: 0,
-      days: 0,
-      hours: 0,
-      minutes: 0,
-      seconds: 0,
-      milliseconds: toDate - now,
-    });
+    const delta = toDate - now;
 
     return this.props.children({
-      ...duration.normalize().toObject(),
-      asDays: Math.floor(duration.as('days')),
+      years: Math.floor(delta / 1000 / 60 / 60 / 24 / 30 / 12),
+      months: Math.floor((delta / 1000 / 60 / 60 / 24 / 30) % 12),
+      days: Math.floor((delta / 1000 / 60 / 60 / 24) % 30),
+      hours: Math.floor((delta / 1000 / 60 / 60) % 24),
+      minutes: Math.floor((delta / 1000 / 60) % 60),
+      seconds: Math.floor((delta / 1000) % 60),
+      milliseconds: delta,
+      asDays: Math.floor(delta / 1000 / 60 / 60 / 24),
       isComplete: this.isComplete(),
     });
   }
