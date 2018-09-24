@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 
-import favicon from '../img/favicon.ico';
 import siteImage from '../img/shareImage.jpg';
 import './Layout.css';
 
@@ -53,7 +52,6 @@ const Layout = ({ children }) => (
           content: `${siteUrl}${siteImage}`,
         },
       ]}
-      link={[{ rel: 'shortcut icon', href: favicon }]}
       htmlAttributes={{ lang: 'en-US' }}
     />
     {children}
