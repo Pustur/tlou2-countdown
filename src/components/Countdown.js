@@ -2,10 +2,7 @@ import { Component } from 'react';
 import PropTypes from 'prop-types';
 
 class Countdown extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { now: new Date() };
-  }
+  state = { now: new Date() };
 
   componentDidMount() {
     if (!this.isComplete()) {
