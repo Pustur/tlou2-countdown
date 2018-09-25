@@ -11,10 +11,7 @@ const siteDescription =
   'Are you hyped for the release of The Last of Us Part II? This countdown will help you keep track of the imminent release date!';
 
 class Layout extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { isClient: false };
-  }
+  state = { isClient: false };
 
   componentDidMount() {
     this.setState({ isClient: true });
