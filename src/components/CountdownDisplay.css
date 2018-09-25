@@ -1,6 +1,12 @@
 .CountdownDisplay {
   display: block;
   margin-top: 2.5rem;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.is-counting .CountdownDisplay {
+  opacity: 1;
 }
 
 .CountdownDisplay__item {
