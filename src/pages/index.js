@@ -11,15 +11,15 @@ const IndexPage = () => (
         <div className="Wrapper">
           <main className="Main">
             <Countdown toDate={new Date(2019, 5, 14)}>
-              {props => (
+              {countdown => (
                 <>
                   <header>
                     <h1 className="Title">The Last of Us Part&nbsp;II</h1>
-                    {!props.isComplete && (
+                    {!countdown.isComplete && (
                       <p className="Subtitle">Will release in</p>
                     )}
                   </header>
-                  {props.isComplete ? (
+                  {countdown.isComplete ? (
                     <p className="Title CompleteMessage zoom-in">
                       {isClient && (
                         <Helmet htmlAttributes={{ class: 'is-complete' }} />
@@ -35,12 +35,12 @@ const IndexPage = () => (
                         <Helmet htmlAttributes={{ class: 'is-counting' }} />
                       )}
                       <CountdownDisplay
-                        months={props.months}
-                        days={props.days}
-                        asDays={props.asDays}
-                        hours={props.hours}
-                        minutes={props.minutes}
-                        seconds={props.seconds}
+                        months={countdown.months}
+                        days={countdown.days}
+                        asDays={countdown.asDays}
+                        hours={countdown.hours}
+                        minutes={countdown.minutes}
+                        seconds={countdown.seconds}
                       />
                     </>
                   )}
