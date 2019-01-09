@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 
-import siteImage from '../img/shareImage.jpg';
+import siteImage from '../img/share-image.jpg';
 import './Layout.css';
 
 const siteUrl = ''; // http://example.com
