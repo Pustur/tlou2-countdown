@@ -53,7 +53,6 @@ const IndexPage = () => (
           <a
             className="Github"
             href="https://github.com/Pustur"
-            rel="noopener"
             title="See on Github"
           >
             <svg
