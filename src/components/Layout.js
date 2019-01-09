@@ -5,7 +5,7 @@ import Helmet from 'react-helmet';
 import siteImage from '../img/share-image.jpg';
 import './Layout.css';
 
-const siteUrl = ''; // http://example.com
+const siteUrl = 'https://tlou2-countdown.netlify.com';
 const siteTitle = 'TLOU Part II - Countdown to release';
 const siteDescription =
   'Are you hyped for the release of The Last of Us Part II? This countdown will help you keep track of the imminent release!';

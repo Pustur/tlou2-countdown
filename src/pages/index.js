@@ -52,7 +52,7 @@ const IndexPage = () => (
         <footer>
           <a
             className="Github"
-            href="https://github.com/Pustur"
+            href="https://github.com/Pustur/tlou2-countdown"
             title="See on Github"
           >
             <svg

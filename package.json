@@ -1,10 +1,17 @@
 {
-  "name": "tlou-countdown",
-  "description": "The Last of Us Part II - Countdown to release",
+  "name": "tlou2-countdown",
+  "description": "A website that shows a countdown to the release of The Last of Us Part II",
   "version": "0.1.0",
   "author": {
     "name": "Loris Bettazza",
     "email": "loris.bettazza@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Pustur/tlou2-countdown.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Pustur/tlou2-countdown/issues"
   },
   "dependencies": {
     "gatsby": "2.0.6",
