@@ -8,7 +8,7 @@ import './Layout.css';
 const siteUrl = 'https://tlou2-countdown.netlify.com';
 const siteTitle = 'TLOU Part II - Countdown to release';
 const siteDescription =
-  'Are you hyped for the release of The Last of Us Part II? This countdown will help you keep track of the imminent release!';
+  'Are you ready for the release of The Last of Us Part II? This countdown will help you keep track of the imminent release!';
 
 class Layout extends Component {
   state = { isClient: false };

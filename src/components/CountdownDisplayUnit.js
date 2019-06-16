@@ -6,7 +6,7 @@ const CountdownDisplayUnit = ({ name, value, hidden }) => {
     !hidden && (
       <span className="CountdownDisplay__item">
         <span className="CountdownDisplay__number">
-          {`${value}`.padStart(2, '0')}
+          {String(value).padStart(2, '0')}
         </span>
         <span className="CountdownDisplay__label">
           {name.slice(0, -1)}
