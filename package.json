@@ -1,7 +1,7 @@
 {
   "name": "tlou2-countdown",
   "description": "A website that shows a countdown to the release of The Last of Us Part II",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "author": {
     "name": "Loris Bettazza",
     "email": "loris.bettazza@gmail.com"
