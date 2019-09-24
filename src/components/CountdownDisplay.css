@@ -1,0 +1,94 @@
+.CountdownDisplay {
+  display: block;
+  margin-top: 2.5rem;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.is-counting .CountdownDisplay {
+  opacity: 1;
+}
+
+.CountdownDisplay__item {
+  display: flex;
+  align-items: center;
+}
+
+.CountdownDisplay__number {
+  font-size: 3.75rem;
+  font-weight: 100;
+}
+
+.CountdownDisplay__label {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+@media (max-width: 599px) {
+  .CountdownDisplay__number {
+    width: 1.5em;
+  }
+}
+
+@media (min-width: 600px) {
+  .CountdownDisplay {
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3.25rem;
+  }
+
+  .CountdownDisplay__item {
+    display: inline-flex;
+    flex-direction: column;
+    position: relative;
+    min-width: 5.25em;
+  }
+
+  .CountdownDisplay__item + .CountdownDisplay__item {
+    margin-left: 1.5rem;
+  }
+
+  .CountdownDisplay__item + .CountdownDisplay__item:before {
+    font-size: 2rem;
+    position: absolute;
+    left: -1rem;
+    top: 1.2rem;
+    content: ':';
+    font-family: 'Times New Roman';
+  }
+
+  .CountdownDisplay__number {
+    font-size: 4.5rem;
+  }
+
+  .CountdownDisplay__label {
+    font-size: 0.75rem;
+    margin-top: 1em;
+  }
+}
+
+@media (min-width: 960px) {
+  .CountdownDisplay {
+    margin-top: 4rem;
+  }
+
+  .CountdownDisplay__item {
+    min-width: 7.5em;
+  }
+
+  .CountdownDisplay__item + .CountdownDisplay__item {
+    margin-left: 2rem;
+  }
+
+  .CountdownDisplay__item + .CountdownDisplay__item:before {
+    left: -1.3rem;
+    top: 2.2rem;
+  }
+
+  .CountdownDisplay__number {
+    font-size: 6.25rem;
+  }
+}

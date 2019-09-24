@@ -1,17 +1,28 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
+  "name": "tlou2-countdown",
+  "description": "A website that shows a countdown to the release of The Last of Us Part II",
   "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
-  "dependencies": {
-    "gatsby": "^1.9.277",
-    "gatsby-link": "^1.6.46",
-    "gatsby-plugin-react-helmet": "^2.0.11",
-    "react-helmet": "^5.2.0"
+  "author": {
+    "name": "Loris Bettazza",
+    "email": "loris.bettazza@gmail.com"
   },
-  "keywords": [
-    "gatsby"
-  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Pustur/tlou2-countdown.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Pustur/tlou2-countdown/issues"
+  },
+  "dependencies": {
+    "gatsby": "2.0.6",
+    "gatsby-link": "2.0.1",
+    "gatsby-plugin-manifest": "2.0.2",
+    "gatsby-plugin-offline": "2.0.5",
+    "gatsby-plugin-react-helmet": "3.0.0",
+    "react": "16.5.2",
+    "react-dom": "16.5.2",
+    "react-helmet": "5.2.0"
+  },
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
@@ -20,10 +31,6 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "prettier": "^1.13.7"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "prettier": "1.14.3"
   }
 }

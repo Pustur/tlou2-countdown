@@ -1,0 +1,116 @@
+/* GENERAL */
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  height: 100vh;
+  background-color: #0e191f;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 300;
+  line-height: 1;
+  background-size: cover;
+  color: white;
+  min-height: 100vh;
+  transition: background-image 2s ease, background-position 2s ease;
+}
+
+.is-counting body {
+  background-image: url(../img/bg.jpg);
+  background-position: 35% 0%;
+}
+
+.is-complete body {
+  background-image: url(../img/bg-complete.jpg);
+  background-position: 25% 45%;
+}
+
+svg {
+  display: block;
+}
+
+/* COMPONENTS */
+.Title {
+  margin: 0;
+  font-weight: inherit;
+  font-size: 1.875rem;
+}
+
+.Subtitle {
+  font-size: 1.25rem;
+}
+
+.CompleteMessage {
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+.Github {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 20px;
+  transition: opacity 0.3s ease;
+  opacity: 0.6;
+}
+
+.Github:hover,
+.Github:focus {
+  opacity: 1;
+}
+
+.Github__path {
+  fill: white;
+}
+
+.zoom-in {
+  animation: zoom-in 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.6s both;
+}
+
+@media (max-width: 599px) {
+  .Main {
+    padding: 25px;
+  }
+}
+
+@media (min-width: 600px) {
+  .Wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .Title {
+    font-size: 3.125rem;
+  }
+}
+
+@media (min-width: 960px) {
+  .Title {
+    font-size: 4rem;
+  }
+
+  .Github {
+    padding: 30px;
+  }
+}
+
+@keyframes zoom-in {
+  0% {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
