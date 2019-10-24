@@ -10,7 +10,7 @@ const IndexPage = () => (
       <>
         <div className="Wrapper">
           <main className="Main">
-            <Countdown toDate={new Date(2020, 1, 21)}>
+            <Countdown toDate={new Date(2020, 4, 29)}>
               {countdown => (
                 <>
                   <header>
