@@ -36,6 +36,11 @@ svg {
   display: block;
 }
 
+a {
+  color: #2aa3ef;
+  text-decoration: none;
+}
+
 /* COMPONENTS */
 .Title {
   margin: 0;
