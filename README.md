@@ -2,7 +2,7 @@
 
 > A website that shows a countdown to the release of The Last of Us Part II
 
-You can view the site [here](https://tlou2-countdown.netlify.com/).
+You can view the site [here](https://tlou2-countdown.netlify.app/).
 
 ## Technologies used
 
