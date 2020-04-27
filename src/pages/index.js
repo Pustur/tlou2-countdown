@@ -1,6 +1,8 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import Layout from '../components/Layout';
+import Countdown from '../components/Countdown';
+import CountdownDisplay from '../components/CountdownDisplay';
 
 const IndexPage = () => (
   <Layout>
@@ -8,17 +10,7 @@ const IndexPage = () => (
       <>
         <div className="Wrapper">
           <main className="Main">
-            <header>
-              <h1 className="Title">The Last of Us Part&nbsp;II</h1>
-              <p className="Subtitle">
-                Doesn't have a release date anymore —{' '}
-                <a href="https://twitter.com/Naughty_Dog/status/1245773177944281089">
-                  Twitter announcement
-                </a>
-              </p>
-              {isClient && <Helmet htmlAttributes={{ class: 'is-counting' }} />}
-            </header>
-            {/* <Countdown toDate={new Date(2020, 4, 29)}>
+            <Countdown toDate={new Date(2020, 5, 19)}>
               {countdown => (
                 <>
                   <header>
@@ -54,7 +46,7 @@ const IndexPage = () => (
                   )}
                 </>
               )}
-            </Countdown> */}
+            </Countdown>
           </main>
         </div>
         <footer>
